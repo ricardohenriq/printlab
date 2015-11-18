@@ -207,3 +207,7 @@ footer ul{
 .bx-wrapper .bx-next{
     right:20px
 }
+
+.link-container a{
+	display:block
+}
