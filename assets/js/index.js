@@ -6,13 +6,11 @@ $('.bxslider').bxSlider({
 	auto: true
 });
 
-$("#getPortfolioModal1").click(function(){
-	console.log('#portfolioModal1');
+$("#getPortfolioModal1").one('click', function(){
 	var settings = [];
-	settings['url'] = 'http://localhost/PROJETOS/PrintLab/what-we-do/6.html';
+	settings['url'] = 'http://localhost/PROJETOS/PrintLab/what-we-do/1.html';
 	settings['beforeSend'] = '';
 	settings['success'] = function(response){
-		console.log('sucesso');
 		appendElement('#page-top', response);
 		$('#portfolioModal1').modal('show');
 	}
@@ -24,23 +22,82 @@ $("#getPortfolioModal1").click(function(){
 	functionAjax(settings);
 });
 
-function functionAjax(settings){
-    $.ajax({
-        url: settings['url'],
-		beforeSend: settings['beforeSend'],
-        success: settings['success'],
-        error: settings['error'],
-        dataType: settings['dataType'],
-        global: settings['false']
-    });
-}
+$("#getPortfolioModal2").one('click', function(){
+	var settings = [];
+	settings['url'] = 'http://localhost/PROJETOS/PrintLab/what-we-do/2.html';
+	settings['beforeSend'] = '';
+	settings['success'] = function(response){
+		appendElement('#page-top', response);
+		$('#portfolioModal2').modal('show');
+	}
+	settings['error'] = function(XMLHttpRequest, textStatus, errorThrown){
+		defaultAjaxErrorHandler(XMLHttpRequest, textStatus, errorThrown);
+	}
+	settings['dataType'] = 'html';
+	settings['false'] = false;
+	functionAjax(settings);
+});
 
-function defaultAjaxErrorHandler(XMLHttpRequest, textStatus, errorThrown){
-	console.log(XMLHttpRequest);
-	console.log(textStatus);
-	console.log(errorThrown);
-}
+$("#getPortfolioModal3").one('click', function(){
+	var settings = [];
+	settings['url'] = 'http://localhost/PROJETOS/PrintLab/what-we-do/3.html';
+	settings['beforeSend'] = '';
+	settings['success'] = function(response){
+		appendElement('#page-top', response);
+		$('#portfolioModal3').modal('show');
+	}
+	settings['error'] = function(XMLHttpRequest, textStatus, errorThrown){
+		defaultAjaxErrorHandler(XMLHttpRequest, textStatus, errorThrown);
+	}
+	settings['dataType'] = 'html';
+	settings['false'] = false;
+	functionAjax(settings);
+});
 
-function appendElement(parentID, element){
-	$(parentID).append(element);
-}
+$("#getPortfolioModal4").one('click', function(){
+	var settings = [];
+	settings['url'] = 'http://localhost/PROJETOS/PrintLab/what-we-do/4.html';
+	settings['beforeSend'] = '';
+	settings['success'] = function(response){
+		appendElement('#page-top', response);
+		$('#portfolioModal4').modal('show');
+	}
+	settings['error'] = function(XMLHttpRequest, textStatus, errorThrown){
+		defaultAjaxErrorHandler(XMLHttpRequest, textStatus, errorThrown);
+	}
+	settings['dataType'] = 'html';
+	settings['false'] = false;
+	functionAjax(settings);
+});
+
+$("#getPortfolioModal5").one('click', function(){
+	var settings = [];
+	settings['url'] = 'http://localhost/PROJETOS/PrintLab/what-we-do/5.html';
+	settings['beforeSend'] = '';
+	settings['success'] = function(response){
+		appendElement('#page-top', response);
+		$('#portfolioModal5').modal('show');
+	}
+	settings['error'] = function(XMLHttpRequest, textStatus, errorThrown){
+		defaultAjaxErrorHandler(XMLHttpRequest, textStatus, errorThrown);
+	}
+	settings['dataType'] = 'html';
+	settings['false'] = false;
+	functionAjax(settings);
+});
+
+$("#getPortfolioModal6").one('click', function(){
+	var settings = [];
+	settings['url'] = 'http://localhost/PROJETOS/PrintLab/what-we-do/6.html';
+	settings['beforeSend'] = '';
+	settings['success'] = function(response){
+		appendElement('#page-top', response);
+		$('#portfolioModal6').modal('show');
+	}
+	settings['error'] = function(XMLHttpRequest, textStatus, errorThrown){
+		defaultAjaxErrorHandler(XMLHttpRequest, textStatus, errorThrown);
+	}
+	settings['dataType'] = 'html';
+	settings['false'] = false;
+	functionAjax(settings);
+});
