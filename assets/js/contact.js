@@ -1,8 +1,9 @@
+$(document).ready(function(){
+	insertDataInForm();
+});
+
 function stripTags(str){
-    //return str.replace(/<\/?[^>]+>/gi, '');
-    str = str.replace(/</gi, '&lt');
-    str = str.replace(/>/gi, '&gt');
-	return str;
+	return str.replace(/<\/?[^>]+>/gi, '');
 }
 
 function validateContactForm(formId){
@@ -62,6 +63,10 @@ $("#contactForm").validate({
 			required:true,
 			minlength:8
 		},
+		subject:{
+			required:true,
+			minlength:10
+		},
 		message:{
 			required:true,
 			minlength:50
@@ -80,6 +85,10 @@ $("#contactForm").validate({
 			required:"Por favor insira seu telefone valido.",
 			minlength:"Telefone deve conter no mínimo 8 caracteres."
 		},
+		subject:{
+			required:"Por favor insira o assunto para o contato.",
+			minlength:"Assunto deve conter no mínimo 10 caracteres."
+		},
 		message:{
 			required:"Por favor insira uma descrição com o que deseja tratar.",
 			minlength:"Mensagem deve conter no mínimo 50 caracteres."
@@ -92,7 +101,47 @@ $("#contactForm").validate({
 	errorClass:'help-block text-danger',
 	errorElement:'p',
 	submitHandler:function(){
-		sendMail('contactForm', '[Contato] |Print Site|');
+		sendMail('contactForm', $('#subject').val());
 		return false;
 	}
 });
+
+function getUrlData(){
+	var query = location.search.slice(1);
+	query = decodeURIComponent(query);
+	if(query == ''){
+		return null;
+	}else{
+		var partes = query.split('&');
+		var data = {};
+		partes.forEach(function(parte){
+			var chaveValor = parte.split('=');
+			var chave = chaveValor[0];
+			var valor = chaveValor[1];
+			data[chave] = valor;
+		});
+		return data;
+	}
+}
+
+function insertDataInForm(){
+	var urlData = getUrlData();
+	if(urlData == null){
+		return false;
+	}else{
+		insertContactMessage('#message', urlData);
+		insertSubjectMessage('#subject', 'Orçamento |Print Site|');
+	}
+}
+
+function insertContactMessage(fieldID, urlData){
+	var body = 'Valores prévios para orçamento:&#13;&#10;';
+	for(var prop in urlData){
+		body += prop + ': ' + urlData[prop] + '&#13;&#10;';
+	}
+	$(fieldID).append(body);
+}
+
+function insertSubjectMessage(fieldID, content){
+	$(fieldID).attr('value', content);
+}

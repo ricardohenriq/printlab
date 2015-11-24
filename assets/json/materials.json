@@ -1,0 +1,7 @@
+[
+	{"value":"9", "label":"Photopolimero"},
+	{"value":"4", "label":"Pó de Gesso"},
+	{"value":"8", "label":"SLA Estereolitografia"},
+	{"value":"7.5", "label":"SLS Sinterização"},
+	{"value":"1", "label":"Fdm (ABS ou PLA)"}
+]
