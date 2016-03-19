@@ -8,7 +8,7 @@ $('.bxslider').bxSlider({
 
 $("#getPortfolioModal1").one('click', function(){
 	var settings = [];
-	settings['url'] = 'http://localhost/PROJETOS/PrintLab/what-we-do/1.html';
+	settings['url'] = '/what-we-do/1.html';
 	settings['beforeSend'] = '';
 	settings['success'] = function(response){
 		appendElement('#page-top', response);
@@ -24,7 +24,7 @@ $("#getPortfolioModal1").one('click', function(){
 
 $("#getPortfolioModal2").one('click', function(){
 	var settings = [];
-	settings['url'] = 'http://localhost/PROJETOS/PrintLab/what-we-do/2.html';
+	settings['url'] = '/what-we-do/2.html';
 	settings['beforeSend'] = '';
 	settings['success'] = function(response){
 		appendElement('#page-top', response);
@@ -40,7 +40,7 @@ $("#getPortfolioModal2").one('click', function(){
 
 $("#getPortfolioModal3").one('click', function(){
 	var settings = [];
-	settings['url'] = 'http://localhost/PROJETOS/PrintLab/what-we-do/3.html';
+	settings['url'] = '/what-we-do/3.html';
 	settings['beforeSend'] = '';
 	settings['success'] = function(response){
 		appendElement('#page-top', response);
@@ -56,7 +56,7 @@ $("#getPortfolioModal3").one('click', function(){
 
 $("#getPortfolioModal4").one('click', function(){
 	var settings = [];
-	settings['url'] = 'http://localhost/PROJETOS/PrintLab/what-we-do/4.html';
+	settings['url'] = '/what-we-do/4.html';
 	settings['beforeSend'] = '';
 	settings['success'] = function(response){
 		appendElement('#page-top', response);
@@ -72,7 +72,7 @@ $("#getPortfolioModal4").one('click', function(){
 
 $("#getPortfolioModal5").one('click', function(){
 	var settings = [];
-	settings['url'] = 'http://localhost/PROJETOS/PrintLab/what-we-do/5.html';
+	settings['url'] = '/what-we-do/5.html';
 	settings['beforeSend'] = '';
 	settings['success'] = function(response){
 		appendElement('#page-top', response);
@@ -88,7 +88,7 @@ $("#getPortfolioModal5").one('click', function(){
 
 $("#getPortfolioModal6").one('click', function(){
 	var settings = [];
-	settings['url'] = 'http://localhost/PROJETOS/PrintLab/what-we-do/6.html';
+	settings['url'] = '/what-we-do/6.html';
 	settings['beforeSend'] = '';
 	settings['success'] = function(response){
 		appendElement('#page-top', response);
